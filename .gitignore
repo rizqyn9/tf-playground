@@ -1,0 +1,11 @@
+.vagrant/
+.terraform
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+
+terraform.tfvars
+variables.hcl
+ignore*
+nomad.token
+*.pem
