@@ -13,6 +13,11 @@ resource "google_compute_region_url_map" "load_balancer" {
     path_matcher = "nomad"
   }
 
+  host_rule {
+    hosts        = [var.host_default]
+    path_matcher = "webserver"
+  }
+
   path_matcher {
     name            = "consul"
     default_service = google_compute_region_backend_service.consul.id
@@ -21,5 +26,10 @@ resource "google_compute_region_url_map" "load_balancer" {
   path_matcher {
     name            = "nomad"
     default_service = google_compute_region_backend_service.nomad.id
+  }
+
+  path_matcher {
+    name            = "webserver"
+    default_service = google_compute_region_backend_service.web_server.id
   }
 }
