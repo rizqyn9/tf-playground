@@ -9,3 +9,7 @@ variables.hcl
 ignore*
 nomad.token
 *.pem
+
+variables.hcl
+
+*.tfvars
